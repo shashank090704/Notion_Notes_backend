@@ -103,7 +103,7 @@ import mongoose from "mongoose";
 import User from "@/models/User";
 
 export async function POST(req) {
-  try {
+  
     await mongoose.connect(process.env.MONGODB_URI);
 
     const body = await req.json();
@@ -147,12 +147,6 @@ export async function POST(req) {
       },
       { status: 201 }
     );
-  } catch (err) {
-    console.error("SIGNUP ERROR:", err);
-    return NextResponse.json(
-      { error: err.message },
-      { status: 500 }
-    );
-  }
+  
 }
 
