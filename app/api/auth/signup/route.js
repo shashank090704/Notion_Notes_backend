@@ -107,7 +107,7 @@ export async function POST(req) {
     await mongoose.connect(process.env.MONGODB_URI);
 
     const body = await req.json();
-    console.log("BODY RECEIVED:", body);
+    console.log("BODY RECEIVED:", body.email);
 
     const { name, email, password } = body;
 
